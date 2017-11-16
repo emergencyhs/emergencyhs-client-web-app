@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'r#+hq95nz-q*_g1s%-6riht+c5xi-&x4yw^xo*@vmndw7u96ar'
+SECRET_KEY = os.environ["SECRET_KEY"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,10 +75,16 @@ WSGI_APPLICATION = 'emergencyhs_client_site.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.environ["ENGINE"],
+        'NAME': os.environ["NAME"],
+        'USER': os.environ["USER"],
+        'PASSWORD': os.environ["PASSWORD"],
+        'HOST': os.environ["HOST"],
+        'PORT': os.environ["PORT"],
     }
 }
+
+
 
 
 # Password validation
