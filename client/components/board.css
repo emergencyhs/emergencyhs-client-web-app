@@ -1,0 +1,11 @@
+.card-list {
+    overflow-y: auto;
+    height: 80vh;
+    max-height: 80vh;
+    padding: 0;
+}
+
+.board-wrap {
+    margin: 0;
+    padding: 0;
+}
